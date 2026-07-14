@@ -1,0 +1,27 @@
+version: "3.7"
+
+
+services:
+
+  front:
+    build: .
+
+    # ports:
+    #  - "8080:5173"
+    #  - "8443:443"
+
+    volumes:
+      - .:/app
+
+    ports:
+      - "8466:3000"
+
+    networks:
+      - front
+
+    env_file:
+      - "./.version"
+
+    working_dir: /app
+
+
